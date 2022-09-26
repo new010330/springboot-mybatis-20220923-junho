@@ -18,4 +18,19 @@
             now()
         )
     </insert>
+
+    <select id="getNews" resultType="com.boot.mybatis20220923junho.domain.News">
+        select
+            news_id,
+            news_title,
+            news_writer,
+            news_broadcasting,
+            news_content,
+            create_date,
+            update_date
+        from
+            news_mst
+        where
+            news_id = #{news_id}
+    </select>
 </mapper>

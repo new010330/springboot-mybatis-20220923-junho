@@ -7,4 +7,5 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface NewsRepository {
     public int save(News news);
+    public News getNews(int news_id);
 }

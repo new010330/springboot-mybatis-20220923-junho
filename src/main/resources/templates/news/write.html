@@ -55,72 +55,73 @@
         input:focus, textarea:focus {
             background-color: #fafafa;
         }
+
     </style>
+
 </head>
 <body>
-    <div id="container">
-        <form enctype="multipart/form-data">
-            <table>
-                <thead>
-                    <tr>
-                        <th colspan="2">
-                            <h1>뉴스정보</h1>
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th>
-                            <label for="title">제목</label>
-                        </th>
-                        <td>
-                            <input type="text" id="title" name="title">
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>
-                            <label for="broadcasting-name">방송국명</label>
-                        </th>
-                        <td>
-                            <input type="text" id="broadcasting-name" name="broadcastingName">
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>
-                            <label for="broadcasting-name">첨부이미지</label>
-                        </th>
-                        <td>
-                            <!-- 파일, 이미지만 -->
-                            <input type="file" name="files" accept="image/jpeg, image/png, image/jpg, image/gif">
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>
-                            <label for="content">기사내용</label>
-                        </th>
-                        <td>
-                            <textarea id="content" name="content"></textarea>
-                        </td>
-                    </tr>
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <th colspan="2">
-                            <button type="button" class="write-button">작성하기</button>
-                        </th>
-                    </tr>
-                </tfoot>
-            </table>
-        </form>
-        <div class="preview">
-
-        </div>
+<div id="container">
+    <form enctype="multipart/form-data">
+        <table>
+            <thead>
+            <tr>
+                <th colspan="2">
+                    <h1>뉴스정보</h1>
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th>
+                    <label for="title">제목</label>
+                </th>
+                <td>
+                    <input type="text" id="title" name="title">
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <label for="broadcasting-name">방송국명</label>
+                </th>
+                <td>
+                    <input type="text" id="broadcasting-name" name="broadcastingName">
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <label for="broadcasting-name">첨부이미지</label>
+                </th>
+                <td>
+                    <!-- 파일, 이미지만 -->
+                    <input type="file" name="files" accept="image/jpeg, image/png, image/jpg, image/gif" multiple>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <label for="content">기사내용</label>
+                </th>
+                <td>
+                    <textarea id="content" name="content"></textarea>
+                </td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+                <th colspan="2">
+                    <button type="button" class="write-button">작성하기</button>
+                </th>
+            </tr>
+            </tfoot>
+        </table>
+    </form>
+    <div class="preview">
 
     </div>
+</div>
 
-    <script>
+<script>
         const writeButton = document.querySelector(".write-button");
-        
+
         writeButton.onclick = () => {
             request();
         }
@@ -146,7 +147,7 @@
 
                     preview.innerHTML = `
                         <h2>제목: ${response.data.title}</h2>
-                        <h2>방송국명: ${response.data.broadcastingName}</h2>
+                        <h2>방속국명: ${response.data.broadcastingName}</h2>
                         <h2>내용: ${response.data.content}</h2>
                         <h2>파일 리스트</h2>
                     `;
@@ -162,6 +163,7 @@
                 }
             })
         }
+
     </script>
 </body>
 </html>
