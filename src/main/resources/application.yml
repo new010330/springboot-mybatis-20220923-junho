@@ -7,7 +7,14 @@ spring:
     url: jdbc:mariadb://web-study.cdnqudsux9ie.ap-northeast-2.rds.amazonaws.com:3306/back-20220829
     username: admin
     password: 1q2w3e4r
+  server:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
 
 mybatis:
   mapper-locations:
     - /mappers/*.xml
+
+file:
+  path: C:/junil/junho/web/springboot/springboot-mybatis-20220923-junho/upload/
